@@ -10,7 +10,11 @@ graph = g.jsonToGraph('graph.json')
 g.setInitialRanks(graph)
 A = g.graphToAdjMatrix(graph, beta=1, normalize=True)
 
-x = g.initialVector(graph, uniform=False)
+vector = g.initialVector(graph, uniform=False)
+print "Transition Matrix"
 print A
-print x
-x = g.nextArray(x, A, iterations=10)
+print "initial Vector"
+print vector
+vector = g.nextArray(vector, A, iterations=10)
+print "Solution"
+print vector
