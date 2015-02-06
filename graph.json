@@ -1,0 +1,13 @@
+{
+	"vertex" : [
+		{"id" : 1},
+		{"id" : 2},
+		{"id" : 3}
+	],
+	"edge" : [
+		{"start": 1 , "end": 2, "weight": 0, "undirected": false},
+		{"start": 1 , "end": 3, "weight": 0, "undirected": false},
+		{"start": 2 , "end": 3, "weight": 0, "undirected": false},
+		{"start": 3 , "end": 1, "weight": 0, "undirected": false}
+	]
+}
