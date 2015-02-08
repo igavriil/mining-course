@@ -10,8 +10,20 @@ def norm(point1, point2, norm_type):
     return distance
 
 
+def nearestNeighboor(points, searchPoints, norm_type):
+    for testPoint in searchPoints:
+        min_distance = np.inf
+        for point in points:
+            distance = norm(point, testPoint, norm_type)
+            if distance < min_distance:
+                min_distance, nearest_neigh = distance, point
+            # print 'L{} distance from :{} to :{} is {}'.format(norm_type, point, testPoint, distance)
+        print 'nearest neighboor of {} is {} with distance {} and L{} norm'.format(testPoint, nearest_neigh, min_distance, norm_type)
+
 point1 = np.array([0, 0])
 point2 = np.array([100, 40])
+
+trainingPoints = (point1, point2)
 
 testPoint1 = np.array([55, 5])
 testPoint2 = np.array([52, 13])
@@ -19,14 +31,6 @@ testPoint3 = np.array([61, 8])
 testPoint4 = np.array([56, 15])
 
 testPoints = (testPoint1, testPoint2, testPoint3, testPoint4)
-for point in testPoints:
-    print '--- point {} ---'.format(point)
-    L1point1 = norm(point1, point, 1)
-    L1point2 = norm(point2, point, 1)
-    L2point1 = norm(point1, point, 2)
-    L2point2 = norm(point2, point, 2)
-    print 'L1 distance from 1- {} and 2- {}'.format(L1point1, L1point2)
-    print 'L1 norm to {}'.format(point1 if L1point1 < L1point2 else point2)
-    print 'L2 distance from 1- {} and 2- {}'.format(L2point1, L2point2)
-    print 'L2 norm to {}'.format(point1 if L2point1 < L2point2 else point2)
-   
+
+for i in range(1, 1+2):
+    nearestNeighboor(trainingPoints, testPoints, i)
