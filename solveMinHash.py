@@ -14,6 +14,8 @@ print array
 
 for i, rows in enumerate(minhash):
     index = np.where(minhash == i+1)[0][0]
+    print '----- iteration {} -----'.format(i)
+    print signature
     if np.count_nonzero(np.isnan(signature)) == 0:
         break
     for i, item in enumerate(array[index]):
@@ -22,5 +24,3 @@ for i, rows in enumerate(minhash):
                 signature[i] = item
             elif signature[i] > item:
                 signature[i] = item
-
-print signature
