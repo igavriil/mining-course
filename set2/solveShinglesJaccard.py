@@ -1,5 +1,4 @@
 from fractions import Fraction
-import math
 
 firstWord = 'ABRACADABRA'
 secondWord = 'BRICABRAC'
