@@ -9,7 +9,7 @@ firstShingles = set()
 
 def word_to_shingles(word, length=2):
     shingles = set()
-    splitedWord = [word[i:i+length] for i in range(0, len(word)-1, 1)]
+    splitedWord = [word[i:i+length] for i in range(0, len(word)-length+1, 1)]
     for chars in splitedWord:
         shingles.add(chars)
     return shingles
