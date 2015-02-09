@@ -62,7 +62,7 @@ all_baskets = [b1, b2, b3, b4, b5, b6, b7, b8]
 all_baskets_subsets = all_subsets(all_baskets)
 
 frequencies = itemsets_frequency(all_baskets_subsets, all_baskets)
-support, confidence = filter_by_frequency(frequencies, 3, 2)
+support, confidence = filter_by_frequency(frequencies, 2, 2)
 print "-- support --"
 print_frequency_dicts(support)
 print '-- confidence --'
