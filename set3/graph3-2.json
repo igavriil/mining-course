@@ -1,0 +1,19 @@
+{
+	"vertex" : [
+		{"id" : 1},
+		{"id" : 2},
+		{"id" : 3},
+		{"id" : 4},
+		{"id" : 5},
+		{"id" : 6}
+	],
+	"edge" : [
+		{"start": 1 , "end": 2, "weight": 1, "undirected": true},
+		{"start": 1 , "end": 3, "weight": 1, "undirected": true},
+		{"start": 2 , "end": 4, "weight": 1, "undirected": true},
+		{"start": 2 , "end": 6, "weight": 1, "undirected": true},
+		{"start": 3 , "end": 4, "weight": 1, "undirected": true},
+		{"start": 4 , "end": 5, "weight": 1, "undirected": true},
+		{"start": 5 , "end": 6, "weight": 1, "undirected": true}	
+	]
+}
