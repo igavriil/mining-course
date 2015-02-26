@@ -21,7 +21,7 @@ def print_distinct_appr(stream):
     print '{}: max tail:{} estimate:{}'.format(stream, tail, appr)
 
 
-streams = [[4, 5, 6, 7], [2, 5, 7, 10], [2, 6, 8, 10], [1, 3, 6, 6]]
+streams = [[1, 5, 8, 9], [2, 3, 6, 9], [3, 7, 8, 10], [4, 5, 6, 7]]
 for stream in streams:
     print_distinct_appr(stream)
 
