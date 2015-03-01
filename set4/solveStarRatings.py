@@ -26,4 +26,5 @@ ratings = normalize_rows(ratings)
 print ratings
 ratings = normalize_columns(ratings)
 print ratings
-print np.where(ratings == ratings.min())
+print 'min is on {} with value{}'.format(np.where(ratings == ratings.min()), ratings.min())
+print 'max is on {} with value{}'.format(np.where(ratings == ratings.max()), ratings.max())
