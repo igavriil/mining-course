@@ -29,4 +29,4 @@ def map_function(M, N):
 
 MN_dict = map_function(M, N)
 for key, value in MN_dict.iteritems():
-	print len(value)
+	print len(	value)

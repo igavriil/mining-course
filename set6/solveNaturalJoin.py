@@ -1,22 +1,24 @@
+from collections import defaultdict
+
 R = [(0, 1), (1, 2), (2, 3)]
 S = [(0, 1), (1, 2), (2, 3)]
 
 def map_function(R, S):
-	R_dict = {}
-	S_dict = {}
+	map_dict = defaultdict(list)
 	for (a, b) in R:
-		R_dict[b] = ('R', a)
+		map_dict[b].append(('R', a))
 	for (b, c) in S:
-		S_dict[b] = ('S', c)
-	return R_dict, S_dict
+		map_dict[b].append(('S', c))
+	return map_dict
 
-R_dict, S_dict = map_function(R, S)
-print R_dict, S_dict
-def reduce_function(R_dict, S_dict):
+map_dict = map_function(R, S)
+print map_dict
+
+def reduce_function(map_dict):
 	x = []
-	for key, val in R_dict.iteritems():
-		if key in S_dict:
-			x.append((val[1], key, S_dict[key][1]))
+	for key, val in map_dict.iteritems():
+		if len(val) == 2:
+			x.append((key, val))
 	return x
 
-print reduce_function(R_dict, S_dict)
+print reduce_function(map_dict)

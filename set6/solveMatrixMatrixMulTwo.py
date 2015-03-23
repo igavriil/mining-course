@@ -2,6 +2,9 @@
 import numpy as np
 from collections import defaultdict
 
+x = 3
+y = 2
+z = 4
 M = np.array([[1, 2], [3, 4], [5, 6]])
 N = np.array([[1, 2, 3 ,4], [5, 6, 7, 8]])
 print M
@@ -49,5 +52,7 @@ def split_values(values_array):
 
 
 first_map = first_map_function(M, N)
-# print first_map
+print '----'
+print first_map
+print '----'
 print len(first_reduce_function(first_map).keys())
