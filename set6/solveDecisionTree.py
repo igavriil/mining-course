@@ -11,7 +11,6 @@ for point in pos + neg:
     # print '------------'
     # print '{} {} '.format(age, sal)
     for level, rules in decisions.iteritems():
-        
         if rules[decision].keys()[0] == 'age':
             if age > rules[decision].values()[0]:
                 decision = 1
@@ -34,4 +33,3 @@ for point in pos + neg:
         print '------------'
 
         # print rules
-
