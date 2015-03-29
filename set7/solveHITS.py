@@ -42,12 +42,16 @@ graph = {0: [1, 2], 1: [0], 2: [3], 3: [2]}
 L = create_link_matrix(graph)
 h_old = initialize_hubbiness(graph)
 
+i = 0
 while True:
     a_new = estimate_authority(L, h_old)
     h_new = estimate_hubinness(L, a_new)
     if 'a_old' in locals():
-        if converg(a_new, a_old, 1e-10) and converg(h_new, h_old, 1e-10):
+        if converg(a_new, a_old, 1e-3) and converg(h_new, h_old, 1e-3):
             break
+    i += 1
+    if i == 2:
+        break
     a_old = a_new
     h_old = h_new
 
