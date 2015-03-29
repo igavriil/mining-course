@@ -1,5 +1,7 @@
 # mining-course
 
 ### Set 1
-- Page Rank Algorithm   
+- Page Rank Algorithms   
   Read a .json file which outlines the structure of the graph, create a Graph object and manipulate it in order to produce the corresponding transition matrix. If there is an edge from i to j then M(i,j) = 1/d(i), where d(i) the edges with starting poin the vertex i. The beta parameter which describes the probabillity of a random jump from a node to another even if no edge is connecting them, can be tunned when creating the matrix. The problem then can be solved by solving the set of linear equations(rank flow) or by using power iteration on the random walk (Markov processes) interpretation of the problem that converge to the stationary distribution which is in fact the solution (eigenvector) of our problem. The beta parameter is essential in cases of spider trap (only one biderectional edge between to vertices) and dead end (only incoming edges in a vertex) can make the transition Matrix stochastic, irreducible and aperiodic, which are propetries of the Markov transition matrix in order any starting vector to converge to the unique stationary vector. The starting vector can be choosen to be uniformly distibuted in each vertex with sum = 1, or equal to 1 for every vertex. 
+- Map Reduce for prime divisors
+The map function takes an integer `i` and produces a list of pairs `(key:p, value:[i])` such that p is a prime divisor of `p`. The divisors of an integer `i` are computed using sieve of Eratosthenis algotithm and the corresponding pairs are created. The reduce function groups all the keys together (the divisors), and sums their corresponding values (all the integers to be examined that have this divisors).
