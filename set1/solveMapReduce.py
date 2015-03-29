@@ -1,5 +1,8 @@
+from collections import defaultdict
+
+
 # sieve of eratosthenis
-def primes(n):
+def primes_to(n):
     if n <= 2:
         return []
     sieve = [True]*(n+1)
@@ -10,24 +13,32 @@ def primes(n):
     return [2]+[i for i in range(3, n, 2) if sieve[i]]
 
 
-def divisors(numbers, primes):
+def prime_divisors(number, primes):
+    result = []
+    for prime in primes:
+        if prime <= number and number % prime == 0:
+            result.append(prime)
+    return result
+
+
+def map_function(number, primes):
+    pairs = {}
+    for prime_divisor in prime_divisors(number, primes):
+        pairs[prime_divisor] = number
+    return pairs
+
+
+def reduce(numbers):
+    dictionary = defaultdict(list)
+    primes_divisors = primes_to(max(numbers))
     for number in numbers:
-        for prime in primes:
-            if number >= prime and number % prime == 0:
-                primes[prime].append(number)
-    return primes
+        for prime_divisor in map_function(number, primes_divisors):
+            dictionary[prime_divisor].append(number)
 
-numbers = (15, 21, 24, 30, 49)
+    result = {}
+    for prime_divisor, numbers in dictionary.iteritems():
+        result[prime_divisor] = sum(numbers)
+    return dictionary, result
 
-primeFactors = primes(49)
-dictFactor = {}
-for prime in primeFactors:
-    dictFactor.setdefault(prime, [])
-
-primeDivisors = divisors(numbers, dictFactor)
-print primeDivisors
-reduced = {}
-for key, value in dictFactor.iteritems():
-    reduced[key] = sum(value)
-
-print reduced
+numbers = [15, 21, 24, 30, 49]
+print reduce(numbers)
